@@ -1,14 +1,9 @@
-const cors = require('cors')
-
 const express = require('express')
 
 const bodyParser = require('body-parser')
 
 //CRIANDO UMA CONSTANTE INSTANCIANDO O EXPRESS
 const app = express()
-
-//CONFIGURA O APP PRA USAR O CORS
-app.use(cors())
 
 const database = require('./src/config/database')
 
