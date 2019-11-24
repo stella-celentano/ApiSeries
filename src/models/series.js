@@ -20,6 +20,6 @@ const SerieSchema = new Schema({
         versionKey: false,
         timestamps: true
     }
-);
+)
 
 module.exports = model('serie', SerieSchema)

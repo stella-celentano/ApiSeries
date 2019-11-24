@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-const { SerieModel } = require('./../models/series')
+const SerieModel = require('./../models/series')
 
 class Series {
     get(req, res) {
