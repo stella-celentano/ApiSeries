@@ -42,9 +42,9 @@ class Series {
     delete(req, res) {
         SerieModel.deleteOne({ _id: req.params.id }, (err, serie) => {
             if (err)
-            res.status(500).json({ message: 'Erro ao processar requisição', error: err })
-        else
-            res.status(200).json({ message: 'Série apagada com sucesso', data: serie })
+                res.status(500).json({ message: 'Erro ao processar requisição', error: err })
+            else
+                res.status(200).json({ message: 'Série apagada com sucesso', data: serie })
         })
     }
 }
