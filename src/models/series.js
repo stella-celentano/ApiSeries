@@ -22,4 +22,4 @@ const SerieSchema = new Schema({
     }
 )
 
-module.exports = model('serie', SerieSchema)
+module.exports = model('series', SerieSchema)

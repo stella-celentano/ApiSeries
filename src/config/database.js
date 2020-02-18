@@ -1,18 +1,12 @@
 const mongoose = require("mongoose");
+require('dotenv').config()
 
-const dbSerie = "mongodb+srv://stella:stella2019@cluster0-cmbag.mongodb.net/test?retryWrites=true&w=majority";
-
-mongoose.connect(dbSerie, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-});
-
-const db = mongoose.connection;
-db.on("error", () => {
-    console.log("Error connect DB", error)
-});
-db.once("open", () => {
-    console.log("Success connect DB")
-});
-
-module.exports = mongoose;
+mongoose
+    .connect(`mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@${process.env.DB_HOST}/${process.env.DB_NAME}`, {
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+    })
+    .then(() => console.log(`Success connect DB ${process.env.DB_NAME}`))
+    .catch(error => {
+        console.log(`Error connect DB, ${error.message}`);
+    });

@@ -1,6 +1,6 @@
 const express = require('express')
-
 const bodyParser = require('body-parser')
+const cors = require('cors')
 
 //CRIANDO UMA CONSTANTE INSTANCIANDO O EXPRESS
 const app = express()
@@ -9,6 +9,8 @@ const database = require('./src/config/database')
 
 //DEFININDO QUEM É A PORTA DE ENTRADA
 const port = process.env.PORT || 3000
+
+app.use(cors())
 
 //CONFIGURA O APP PRA USAR O BODYPARSER
 app.use(bodyParser.json())
